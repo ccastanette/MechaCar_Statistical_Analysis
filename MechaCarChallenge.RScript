@@ -1,8 +1,33 @@
 library(dplyr)
+
+# Deliverable 1
+
+# Read in MechaCar CSV
 MechaCar_mpg <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
-view(MechaCar_mpg)
+#Performing LineReg
 lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle+ ground_clearance + AWD ,data=MechaCar_mpg)
+# Creating Summary
 summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle+ ground_clearance + AWD ,data=MechaCar_mpg))
+
+# Deliverable 2
+
+# Read in SuspensionCoil CSV
 Suspension_Coil <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
+#Create Summary for total population
 total_summary <- Suspension_Coil %>% summarize(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI))
+# Create summary for each lot
 lot_summary <- Suspension_Coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI))
+
+# Deliverable 3
+
+#Performing t.test
+t.test(Suspension_Coil$PSI,mu=1500)
+#Performing t.test for each lot
+#create subset of each lot
+Lot1 <- subset(Suspension_Coil, Manufacturing_Lot=='Lot1')
+Lot2 <- subset(Suspension_Coil, Manufacturing_Lot=='Lot2')   
+Lot3 <- subset(Suspension_Coil, Manufacturing_Lot=='Lot3') 
+# perform t.test for each lot
+t.test(x=Lot1$PSI,mu=1500)
+t.test(x=Lot2$PSI,mu=1500)
+t.test(x=Lot3$PSI,mu=1500)
