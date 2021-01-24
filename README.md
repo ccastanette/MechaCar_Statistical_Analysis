@@ -19,15 +19,27 @@
 1. The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
 
     The current manufacturing data meets the design specification for all the lots together but not for each lot individually, the total variance for all the lots together is 62.29356, which passes, while lot 3s variance is 170.2861224 which does not meet the specification of having a variance not exceeding 100psi.
+![total_summary](https://github.com/ccastanette/MechaCar_Statistical_Analysis/blob/main/pics/total_summary.png)
 
+![per_lot](https://github.com/ccastanette/MechaCar_Statistical_Analysis/blob/main/pics/lot_summary.png)
 ## T-Tests on Suspension Coils
 
 The results of the t.test for the whole population of the suspension_Coil data is a p-value of .06028 which means that the mean of the population is not statistically different from 1500.
+![total_pop_ttest](https://github.com/ccastanette/MechaCar_Statistical_Analysis/blob/main/pics/pop_t_test.png)
 
 For each of the lots the p-values are:
 Lot 1: 1
+
+![lot1](https://github.com/ccastanette/MechaCar_Statistical_Analysis/blob/main/pics/lot1_t_test.png)
+
 Lot 2: .6072
+
+![lot2](https://github.com/ccastanette/MechaCar_Statistical_Analysis/blob/main/pics/lot2_t_test.png)
+
 Lot 3: .04168
+
+![lot3](https://github.com/ccastanette/MechaCar_Statistical_Analysis/blob/main/pics/lot3_t_test.png)
+
 This means that of the 3 lots only Lot 3 has a mean that is statistically different than 1500.
 
 ## Study Design: MechaCar vs Competition
